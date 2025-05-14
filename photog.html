@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - DesignPro</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <a href="index.html" class="logo">Design<span style="color: rgb(40, 40, 251);">Pro</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="designs.html">Designs</a></li>
+                <li><a href="photog.html" class="active">Photography</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Capturing Moments That Matter</h1>
+                <p>From candid portraits to breathtaking landscapes, photography that tells your story in every frame.</p>
+                <a href="gallery.html" class="btn">View Gallery</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const track = document.getElementById('carouselTrack');
+        const slides = track.children;
+        const slideWidth = slides[0].offsetWidth;
+        const totalSlides = slides.length;
+
+            currentIndex += direction;
+
+                if (currentIndex < 0) currentIndex = totalSlides - 1;
+                if (currentIndex >= totalSlides) currentIndex = 0;
+
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+    </script>
+</body>
+</html>
